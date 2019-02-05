@@ -9,11 +9,11 @@ Introduction
     :target: https://discord.gg/nBQh6qu
     :alt: Discord
 
-.. image:: https://travis-ci.org/adafruit/Adafruit_CircuitPython_SSD1306.svg?branch=master
-    :target: https://travis-ci.org/adafruit/Adafruit_CircuitPython_SSD1306
+.. image:: https://travis-ci.com/adafruit/Adafruit_CircuitPython_SSD1306.svg?branch=master
+    :target: https://travis-ci.com/adafruit/Adafruit_CircuitPython_SSD1306
     :alt: Build Status
 
-Adafruit CircuitPython driver for SSD1306 OLED displays.
+Adafruit CircuitPython driver for SSD1306 or SSD1305 OLED displays. Note that SSD1305 displays are back compatible so they can be used in-place of SSD1306 with the same code and commands.
 
 This driver is based on the SSD1306 driver in the MicroPython source but differs
 by supporting hardware I2C interfaces and Adafruit CircuitPython API.  For a
@@ -26,6 +26,7 @@ This driver depends on:
 
 * `Adafruit CircuitPython <https://github.com/adafruit/circuitpython>`_
 * `Bus Device <https://github.com/adafruit/Adafruit_CircuitPython_BusDevice>`_
+* `Adafruit framebuf <https://github.com/adafruit/Adafruit_CircuitPython_framebuf>`_
 
 Please ensure all dependencies are available on the CircuitPython filesystem.
 This is easily achieved by downloading
