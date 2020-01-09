@@ -9,15 +9,13 @@ Introduction
     :target: https://discord.gg/nBQh6qu
     :alt: Discord
 
-.. image:: https://travis-ci.com/adafruit/Adafruit_CircuitPython_SSD1306.svg?branch=master
-    :target: https://travis-ci.com/adafruit/Adafruit_CircuitPython_SSD1306
+.. image:: https://github.com/adafruit/Adafruit_CircuitPython_SSD1306/workflows/Build%20CI/badge.svg
+    :target: https://github.com/adafruit/Adafruit_CircuitPython_SSD1306/actions/
     :alt: Build Status
 
 Adafruit CircuitPython driver for SSD1306 or SSD1305 OLED displays. Note that SSD1305 displays are back compatible so they can be used in-place of SSD1306 with the same code and commands.
 
-This driver is based on the SSD1306 driver in the MicroPython source but differs
-by supporting hardware I2C interfaces and Adafruit CircuitPython API.  For a
-MicroPython machine API compatible library see: https://github.com/adafruit/micropython-adafruit-ssd1306
+This driver implements the `adafruit_framebuf interface <https://circuitpython.readthedocs.io/projects/framebuf/en/latest/>`__. It is **not** the `displayio` driver for the SSD1306. See the `Adafruit CircuitPython DisplayIO SSD1306 <https://github.com/adafruit/Adafruit_CircuitPython_DisplayIO_SSD1306/>`_ driver for `displayio` support.
 
 
 Dependencies
@@ -31,6 +29,31 @@ This driver depends on:
 Please ensure all dependencies are available on the CircuitPython filesystem.
 This is easily achieved by downloading
 `the Adafruit library and driver bundle <https://github.com/adafruit/Adafruit_CircuitPython_Bundle>`_.
+
+Installing from PyPI
+====================
+
+On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from
+PyPI <https://pypi.org/project/adafruit-circuitpython-ssd1306/>`_. To install for current user:
+
+.. code-block:: shell
+
+    pip3 install adafruit-circuitpython-ssd1306
+
+To install system-wide (this may be required in some cases):
+
+.. code-block:: shell
+
+    sudo pip3 install adafruit-circuitpython-ssd1306
+
+To install in a virtual environment in your current project:
+
+.. code-block:: shell
+
+    mkdir project-name && cd project-name
+    python3 -m venv .env
+    source .env/bin/activate
+    pip3 install adafruit-circuitpython-ssd1306
 
 Usage Example
 =============
@@ -67,6 +90,9 @@ Usage Example
   display.show()
 
 
+More examples and details can be found in the `adafruit_framebuf docs <https://circuitpython.readthedocs.io/projects/framebuf/en/latest>`__.
+
+
 Contributing
 ============
 
@@ -74,52 +100,7 @@ Contributions are welcome! Please read our `Code of Conduct
 <https://github.com/adafruit/adafruit_CircuitPython_SSD1306/blob/master/CODE_OF_CONDUCT.md>`_
 before contributing to help this project stay welcoming.
 
-Building locally
-================
+Documentation
+=============
 
-Zip release files
------------------
-
-To build this library locally you'll need to install the
-`circuitpython-build-tools <https://github.com/adafruit/circuitpython-build-tools>`_ package.
-
-.. code-block:: shell
-
-    python3 -m venv .env
-    source .env/bin/activate
-    pip install circuitpython-build-tools
-
-Once installed, make sure you are in the virtual environment:
-
-.. code-block:: shell
-
-    source .env/bin/activate
-
-Then run the build:
-
-.. code-block:: shell
-
-    circuitpython-build-bundles --filename_prefix adafruit-circuitpython-ssd1306 --library_location .
-
-Sphinx documentation
------------------------
-
-Sphinx is used to build the documentation based on rST files and comments in the code. First,
-install dependencies (feel free to reuse the virtual environment from above):
-
-.. code-block:: shell
-
-    python3 -m venv .env
-    source .env/bin/activate
-    pip install Sphinx sphinx-rtd-theme
-
-Now, once you have the virtual environment activated:
-
-.. code-block:: shell
-
-    cd docs
-    sphinx-build -E -W -b html . _build/html
-
-This will output the documentation to ``docs/_build/html``. Open the index.html in your browser to
-view them. It will also (due to -W) error out on any warning like Travis will. This is a good way to
-locally verify it will pass.
+For information on building library documentation, please check out `this guide <https://learn.adafruit.com/creating-and-sharing-a-circuitpython-library/sharing-our-docs-on-readthedocs#sphinx-5-1>`_.
